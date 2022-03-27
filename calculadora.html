@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ejercicio 10</title>
+</head>
+<body>
+	<h1 class="titulo">Ejercicio 10: Calculadora</h1>
+	<p class="texto-formateado">(ahora tambien con restas y multiplicaciones)</p>
+	<p>
+		<label for="numero-1">Numero 1</label>
+		<input type="number" id="numero-1" name="numero-1">		
+	</p>
+	<p>
+		<label for="numero-2">Numero 2</label>
+		<input type="number" id="numero-2" name="numero-2">				
+	</p>
+	<p>
+		<label for="operacion">Operacion</label>
+		<select name="operacion" id="operacion">
+			<option value="sumar">Sumar</option>
+			<option value="restar">Restar</option>
+			<option value="multiplicar">Multiplicar</option>
+			<option value="dividir">Dividir</option>
+		</select>
+	</p>
+	<p>
+		<button class="" onclick="operar()">Operar</button>
+	</p>
+	<p id="resultado">No se hizo ninguna operación todavía...</p>
+
+<script type="text/javascript">
+/*
+	Implementar la funcion operar, que lea los valores ingresados en los input, lea la operación ingresada en el select, y muestre el resultado de la operacion en pantalla.
+*/
+function operar() {
+    var num1 = parseInt(document.getElementById('numero-1').value);
+    var num2 = parseInt(document.getElementById('numero-2').value);
+    var operacion = document.getElementById("operacion");
+    if(operacion.value == "sumar")
+        {
+            var suma = num1 + num2;
+             document.getElementById('resultado').innerHTML = suma;
+        }
+    else if (operacion.value == "restar")
+        {
+            var resta = num1 - num2;
+             document.getElementById('resultado').innerHTML = resta;
+        }
+    else if (operacion.value == "multiplicar")
+        {
+            var multi = num1 * num2;
+             document.getElementById('resultado').innerHTML = multi;
+        }
+    else if (operacion.value == "dividir")
+        {
+            var div = num1 / num2;
+             document.getElementById('resultado').innerHTML = div;
+        }
+	//
+}
+</script>
+</body>
+</html>
+
